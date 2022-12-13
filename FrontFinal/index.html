@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muster Cloud</title>
+    <link href="style.css" rel="styleSheet" type="text/css">
+
+    <link rel="stylesheet" href="./Style.css">
+
+</head>
+<body background="fondo.jfif" > 
+  
+  <!--ACA EMPIEZA LA BARRA DE NAVEGACION-->
+  <div class="topnav" id="myTopnav">
+    <a href="#Login" class="active">Iniciar Sesion</a>
+    <a href="#formRegistro">Registrar Usuario</a>
+    <a href="#Admin">Administrador</a>
+    <a href="#Manuales">Manuales</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <!--ACA TERMINA LA BARRA DE NAVEGACION-->
+
+    <!--INICIA  REGISTRAR UN USUARIO-->
+    <div  class="RegistrarUsuario">
+        <!--CON EL ID DEL FORM MANDO A LLAMAR A LA NAVBAR-->
+          <form id="formRegistro">
+            <h1>Registrarse</h1>
+            <label >Usuario:</label>
+            <div>
+              <center><input id="username" name="username" type="text" placeholder="usuario"></center>
+              
+            </div>
+            <label >Nombre:</label>
+            <div>
+              <center><input id="name" name="name" type="text" placeholder="nombre"></center>
+              
+            </div>
+            <label >DPI:</label>
+            <div>
+             <center> <input id="dpi"  name="dpi" type="text" placeholder="dpi"></center>
+              
+            </div>
+            <label >Telefono</label>
+            <div>
+              <center><input id="phone"  name="phone" type="text" placeholder="telefono"></center>
+              
+            </div>
+            <label >Contraseña:</label>
+            <div>
+              <center><input id="password"  name="password" type="text" placeholder="contraseña"></center>
+              
+            </div>
+           <div>
+            <center>            <button type="buttonRegistrar" id="btnRegistro" onclick="listaUsuarios.registrar()">Registrarse</button></center>
+            
+           </div>
+            
+          </form>
+        </div>
+    </div>
+      <!--TERMINA  REGISTRAR UN USUARIO-->
+
+        <!--INICIA EL INICIO DE SESION -->
+    <div id="Login" class="IniciarSesion">
+      <div>
+        <form id="formSesion">
+          <h1>INICIAR SESIÓN</h1>
+          <label >User:</label>
+          <div>
+            
+            <center><input id="username2" name="username2" type="text" placeholder="usuario" ></center>
+            
+          </div>
+          <label >Password:</label>
+          <div>
+            
+         <center>   <input id="password2" name="password2" type="text" placeholder="contraseña"></center>
+            
+          </div>
+          <div>
+          <center><button type="button" id="btnSesion" onclick="login()">Iniciar sesión</button></center>
+          </div>
+        </form>
+        
+      </div>
+    </div> 
+    <!--TERMINA  EL INICIO DE SESION -->
+
+    <!--INICIA  EL ADMINISTRADOR-->
+  
+    <!--INICIA CARGA DE USUARIOS-->
+    
+    <div id="CargaUsuarios" class="CargarUsers">
+      <h1>Empieza el apartado de ADMINISTRADOR</h1>
+      <h1>Carga masiva de Usuarios</h1>
+
+
+          <form id="Admin">
+              <div class="form-group">
+              <label for="exampleFormControlFile1">Cargar los usuarios</label>
+              <input type="file" class="form-control-file" id="jsonusuarios">
+              </div>
+          </form>
+          
+          <div class="center" id="lienzo" ></div>
+          
+      <button type="IniciarSesion" onclick="listaUsuarios.graficarlista()">Actualizar grafico</button>
+    </div>
+     <!--TERMINA CARGA DE USUARIOS-->
+
+     <!--INICIA CARGA DE ARTISTAS-->
+    <div id="CargaArtistas" class="CargarArtist">
+
+      <h1>Carga masiva de Artistas</h1>
+
+
+          <form>
+              <div class="form-group">
+              <label for="exampleFormControlFile1">Cargar Artistas</label>
+              <input type="file" class="form-control-file" id="jsonartistas">
+              </div>
+          </form>
+          
+          <div class="center" id="lienzo2" ></div>
+          
+      <button onclick="listaArtistas.graficarListaDeListas()">Actualizar grafico</button>
+    </div>
+    <!--TERMINA CARGA DE ARTISTAS-->
+
+    <!--INICIA CARGA DE CANCIONES-->
+    <div id="CargaCanciones" class="CargarSongs">
+
+      <h1>Carga masiva de canciones</h1>
+
+
+          <form>
+              <div class="form-group">
+              <label for="exampleFormControlFile1">Seleccione Canciones</label>
+              <input type="file" class="form-control-file" id="jsoncanciones">
+              </div>
+          </form>
+          
+          <div class="center" id="lienzo2" ></div>
+          
+      
+    </div>
+     <!--TERMINA  CARGA DE CANCIONES-->
+    
+
+      <!--INICIA CARGA DE PODCAST-->
+    <div id="CargaPodcast" class="CargarPod">
+
+      <h1>Carga masiva de podcast</h1>
+
+
+          <form>
+              <div class="form-group">
+              <label for="exampleFormControlFile1">Seleccione podcast:</label>
+              <input type="file" class="form-control-file" id="jsonpodcast">
+              </div>
+          </form>
+          
+          <div class="center" id="lienzoArbol" ></div>
+          <button onclick="arbolPodcast.graficarArbol()">Actualizar grafico</button>
+          <div class="center" id="lienzoPodcast" ></div>
+         
+    </div>
+     <!--TERMINA CARGA DE CANCIONES-->
+
+
+     <!--INICIA CARGA DE MUSICA PROGRAMADA-->
+    <div id="CargaMusicaProgramada" class="MusicaProgramada">
+
+      <h1>Carga masiva de musica programada</h1>
+
+
+          <form>
+              <div class="form-group">
+              <label for="exampleFormControlFile1">Cargar Musica Programada:</label>
+              <input type="file" class="form-control-file" id="jsonMusicaProgramada">
+              </div>
+          </form>
+          
+          
+          <button onclick="matrizDispersa.recorrerMatriz();">Actualizar grafico</button>
+          <div class="center" id="lienzoMusicaProgramada" ></div>
+         
+    </div>
+    
+     <!--TERMINA CARGA DE MUSICA PROGRAMADA-->
+    <!--TERMINA   PARTE DE ADMINISTRADOR -->
+    
+    <!--  APARTADO DEL USUARIO-->
+    <div class="InfefazUsuario">
+      <br></br>
+    <h1>USUARIO</h1>
+    <h1>MUSICA</h1>
+      <form id="formMusicaProgramada">
+        <h1>Publicar una cancion</h1>
+        <label >Artista:</label>
+        <div>
+          <center><input id="nombreArtista" name="nombreArtista" type="text" placeholder="Artista">
+          </center>
+        </div>
+        
+        <label >Nombre canción:</label>
+        <div>
+          <center><input id="nombreCancion" name="nombreCancion" type="text" placeholder="Nombre canción">
+          </center>
+        </div>
+        <label >Ingrese Fecha:</label>
+        <div>
+          <center><input id="dia" name="dia" type="text" placeholder="dia"></center>
+          <center><input id="mes" name="mes" type="text" placeholder="mes"></center>
+          <center><input id="anio" name="anio" type="text" placeholder="año"></center>
+        </div>
+
+      </form>
+      <center><button onclick="publicarInmediatamente()">Publicar</button></center>
+      <center><button onclick="publicarProgramado()">Programar publicacion</button></center>
+
+       <!--PARA VER LA MUSICA DE LOS ARTISTAS-->
+   
+    <div class="LISTASONGS">
+      <h1>Ver musica de los artistas</h1>
+      <form action="">
+        <center>
+          <select id="selectArtistas" >
+            <option value="value1">Prueba</option>
+          </select>
+      <div id="listaCanciones">
+            
+        <button onclick="listaArtistas.mostrarArtistas();listaArtistas.enviarArtistas()">Mostrar artistas</button>
+            
+        
+      </div>
+        <div id="listaResultadoCanciones">
+        <center><input type="text" name="result" id="result"></center>
+        <center><button onclick="agregarOptionPlaylist()">Agregar a la playlist</button></center>
+      </div>
+    </form>
+    </div>
+    <!--termina VER LA MUSICA DE LOS ARTISTAS-->
+
+    <br></br>
+    <h1>PLAYLIST</h1>
+    <div id="divPlaylist">
+      <center><button onclick="playlist.graficarlistaCircular()">Actualizar playlist</button></center>
+      <div class="center" id="lienzoPlaylist" ></div>
+      
+    </div>
+    </div>
+    <!--  termina APARTADO DEL USUARIO-->
+    <br></br>
+
+
+   
+
+
+    <br></br>
+
+    <!--INICIA PARTE DE AMIGOS 
+    -->
+    <div class="listaAmigos">
+      <h1>AMIGOS</h1>
+      
+      <div id="listaUsuarios" >
+        <form id = "formListaUsuarios">
+            <center>
+              <select id="selectUsuarios" >
+                <option value="value1">Prueba</option>
+              </select>
+            </center>
+        </form>
+
+        <button  type="buttonsAmigos" onclick="borrarOptionsListaUsuarios();
+        listaUsuarios.mostrarUsuarios();listaUsuarios.enviarUsuarios()">
+        Mostrar usuarios</button>
+            
+        
+      </div>
+
+      <div id="listaResultadoUsuarios">
+        <center><input type="text" name="resultUsuarios" id="resultUsuarios"></center>
+        
+        <div><button type="buttonsAmigos"  onclick="agregarOptionPila()">Agregar amigo</button></div>
+        <div><button type="buttonsAmigos" onclick="agregarOptionColaBloqueo()">Bloquear usuario</button></div>
+        <div><button  type="buttonsAmigos" onclick="desbloquearUsuarioCola()">Desbloquear usuario</button></div>
+      </div>
+
+      <div id="listaAmigos">
+        
+
+        <form id = "formAmigos">
+          <center>
+            <select id="selectAmigos">
+              <option value="value1">Prueba</option>
+            </select>
+          </center>
+        </form>
+
+        <div>
+          <button type="buttonsAmigos" onclick="borrarOptionsListaAmigos();pilaAmigos.mostrarAmigos();
+        pilaAmigos.enviarAmigos()">Mostrar amigos</button>
+        </div>
+            
+        
+      </div>
+    
+
+  
+
+      <div id="listaResultadoAmigos">
+     <center>  <input type="text" name="resultAmigos" id="resultAmigos"></center>
+      <div>
+        <button type="buttonsAmigos" onclick="pilaAmigos.eliminar()">Eliminar amigo</button>
+   
+      </div>
+      </div>
+
+      <div id="divPla">
+      <button type="buttonsAmigos" onclick="pilaAmigos.graficarpila()">Mostrar pila amigos</button>
+     <div class="center" id="lienzoAmigos" ></div>
+      
+      <br></br>
+      <h1>BLOQUEADOS</h1>
+      </div>
+      <div id="divCola">
+        <button type="buttonsAmigos" onclick="colaBloqueos.graficarCola()">Mostrar cola bloqueos</button>
+        <div class="center" id="lienzoBloqueo" ></div>
+      
+    
+
+    </div>
+  </div>
+  <!--TERMINA PARTE DE AMIGOS-->
+    <br></br>
+    <!--PARA LOS PODCAST-->
+  <div class="Podcast">
+    <h1>PODCAST</h1>
+    <div id="podcast" >
+      <form id="formPodcast">
+        <label >Podcast:</label>
+        <div>
+         <center> <input id="namePodcast" name="namePodcast" type="text" placeholder="Nombre Podcast"></center>
+          
+        </div>
+        <label >Tema Podcast:</label>
+        <div>
+          <center><input id="temaPodcast" name="temaPodcast" type="text" placeholder="Tema Podcast"></center>
+          
+        </div>
+        <label >Invitados Podcast:</label>
+        <div>
+          <center><input id="invitadosPodcast" name="invitadosPodcast" type="text" placeholder="Invitados Podcast"></center>
+          
+        </div>
+        <label >Duración Podcast:</label>
+        <div>
+         <center> <input id="durationPodcast" name="durationPodcast" type="text" placeholder="Duración Podcast"></center>
+          
+        </div>
+        
+        <center><button type="button" id="enviarArbol" onclick="arbolPodcast.enviarNombreArbol()">Publicar podcast</button></center>
+      
+        <div id="divArbol">
+          <center><button onclick="arbolPodcast.graficarArbol()">Mostrar arbol</button></center>
+          <div class="center" id="lienzoPodcast" ></div>
+        
+        
+    
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+   
+
+      <style>
+        td,
+        td{
+          padding: 10px;
+          border:solid black 1px;
+        }
+
+        table{
+          margin : 90px;
+        }
+
+      </style>
+
+    <script src="//d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script>
+      const form = document.getElementById("formRegistro");
+      let usuariosFormData = new FormData(form); 
+      //showDivIniciales();
+    </script>
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</body>
+</html>

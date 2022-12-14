@@ -56,7 +56,7 @@
 /*form para registrar usuario*/
 .RegistrarUsuario{
     position: absolute;
-    top: 150%;
+    top: 145%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 600px;
@@ -103,7 +103,7 @@ button {
 /*PARA CARGA DE  los artistas */
 .CargarArtist{
     position: absolute;
-    top: 250%;
+    top: 240%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 500px;
@@ -113,13 +113,11 @@ button {
 }
 
 
-
-
 /*PARA cargar los usuarios*/
 
 .CargarUsers{
     position: absolute;
-    top: 340%;
+    top: 380%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 500px;
@@ -131,7 +129,7 @@ button {
 /*PARA CARGA DE CANCIONES */
 .CargarSongs{
     position: absolute;
-    top: 400%;
+    top: 445%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 500px;
@@ -140,11 +138,22 @@ button {
     width: 50%;
 }
 
+/* para mostrar todas las canciones*/ 
+.ShowSongs{
+    position: absolute;
+     top: 520%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     width: 500px;
+     background-color: rgb(108, 154, 219);
+     border-radius: 15px;
+     width: 50%;
+   }
 
 /*PARA CARGA DE PODCASTS */
 .CargarPod{
     position: absolute;
-    top: 450%;
+    top: 630%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 500px;
@@ -155,19 +164,7 @@ button {
 /*PARA CARGA DE MUSICA PROGRAMADA */
 .MusicaProgramada{
     position: absolute;
-    top: 520%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 500px;
-    background-color: rgb(108, 154, 219);
-    border-radius: 15px;
-    width: 50%;
-}
-
-/*PARA InfefazUsuario*/
-.InfefazUsuario{
-    position: absolute;
-    top: 650%;
+    top: 710%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 500px;
@@ -180,7 +177,20 @@ button {
 /* para los podcast */
 .Podcast{
     position: absolute;
-    top: 950%;
+    top: 810%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    background-color: rgb(108, 154, 219);
+    border-radius: 15px;
+    width: 50%;
+}
+
+
+/*PARA InfefazUsuario*/
+.InfefazUsuario{
+    position: absolute;
+    top: 990%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 500px;
@@ -194,7 +204,7 @@ button {
 /*PARA AMIGOS */
 .listaAmigos{
     position: absolute;
-    top: 820%;
+    top: 1300%;
     left: 50%;
     transform: translate(-50%,-50%);
     

@@ -30,11 +30,38 @@
     </a>
   </div>
   <!--ACA TERMINA LA BARRA DE NAVEGACION-->
+  <!--ACA EMPIEZA LA BARRA DE NAVEGACION-->
+<!-- The sidebar -->
+<div class="sidebar">
+  <a href="#Login" class="active">Iniciar Sesion</a>
+  <a href="#formRegistro">Registrar Usuario</a>
+  <a href="#Admin">Carga Usuarios</a>
+  <a href="#CargaDeCanciones">Carga Canciones</a> 
+  <a href="#CargaDeArtistas">Carga Artistas</a> 
+  <a href="#CargaDePodcast">Carga Podcast</a> 
+  
+  <a href="#CargaDeMusicaProgramada">Carga Musica Pro.</a>
+  
+  <a href="#listaAmigos">Amigos</a>
+  <a href="#Manuales">Manuales</a>
+</div>
 
-    <!--INICIA  REGISTRAR UN USUARIO-->
+<!-- Page content -->
+<div class="content">
+  ..
+</div>
+  <!--ACA TERMINA LA BARRA DE NAVEGACION-->
+
+    
+ 
+  <!--ACA TERMINA LA BARRA DE NAVEGACION-->
+  <!--INICIA  REGISTRAR UN USUARIO-->
+
     <div  class="RegistrarUsuario">
+      
         <!--CON EL ID DEL FORM MANDO A LLAMAR A LA NAVBAR-->
           <form id="formRegistro">
+            
             <h1>Registrarse</h1>
             <label >Usuario:</label>
             <div>
@@ -71,7 +98,7 @@
         </div>
     </div>
       <!--TERMINA  REGISTRAR UN USUARIO-->
-
+    </section>
         <!--INICIA EL INICIO DE SESION -->
     <div id="Login" class="IniciarSesion">
       <div>
@@ -304,8 +331,8 @@
         <center><input type="text" name="resultUsuarios" id="resultUsuarios"></center>
         
         <div><button type="buttonsAmigos"  onclick="agregarPilaAmigos()">Agregar a un amigo</button></div>
-        <div><button type="buttonsAmigos" onclick="bloquearUsuario()">Bloquear a un usuario</button></div>
-        <div><button  type="buttonsAmigos" onclick="desbloquearUsuario()">Desbloquear a un usuario</button></div>
+        <div><button type="buttonsAmigos" onclick="bloquearUsuario();colaDeBloqueados.graficarColaBloqueados()">Bloquear a un usuario</button></div>
+        <div><button  type="buttonsAmigos" onclick="desbloquearUsuario();colaDeBloqueados.graficarColaBloqueados()">Desbloquear a un usuario</button></div>
       </div>
 
       <div id="listaAmigos">
@@ -332,7 +359,7 @@
       <div id="listaResultadoAmigos">
      <center>  <input type="text" name="resultAmigos" id="resultAmigos"></center>
       <div>
-        <button type="buttonsAmigos" onclick="pilaDeAmigos.eliminar()">Eliminar amigo</button>
+        <button type="buttonsAmigos" onclick="popAmigo()">Eliminar amigo</button>
    
       </div>
       </div>

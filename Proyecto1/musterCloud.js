@@ -1587,155 +1587,116 @@ var playlistCanciones = new CircularDoublyLinkedList();
 
 //////////////////////////////////////////////////////////////Empieza lo referente a la pila amigos (Amigos)
 
-class NodoPila{
-    constructor(inf){
-        this.inf=inf
-        this.siguiente=null
-    }
+class nodeStack 
+{
+  constructor (data, next) 
+  {
+    this.data = data
+    this.next = null
+  }
+
 }
 
-
-
-class pila{
-    constructor(){
-        this.primero=null
-        this.ultimo=null
-        var length=0
-        
-    }
-
-
-
-    //metodos de la cola
-
-    insertar(inf){
-        
-        let temporal=new NodoPila(inf)
-
-        if(this.primero==null){
-            this.primero=temporal
-            this.ultimo=temporal
-            length++;
-        }
-        else{
-            this.ultimo.siguiente=temporal
-            this.ultimo=temporal
-            length++;
-        }
-
-    }
-
-    mostrar(){
-        let temporal=this.primero
-
-        while(temporal!=null){
-            document.write(temporal.inf+"<br>")
-            temporal=temporal.siguiente
-        }
-        document.write("<br>")
-        document.write(length+"<br>")
-    }
-
-
-
-
-    // nos va ayudar a buscar los nodos
-    getTheIndex() {
-        let counter = 0;
-        let currentNode = this.primero;
+class Stack
+{
+  constructor () 
+  {
+    this.top = null
     
-        while (counter < length-2) {
-          currentNode = currentNode.siguiente;
-          counter++;
-         
-        }
-        //document.write(currentNode.inf+"<br>")
-        return currentNode;
+  }
+
+  push(ele)
+  {
+	  var node=new nodeStack(ele)
+	  console.log(node)
+	  node.next=this.top
+	  this.top=node
+      
+  }
+
+  pop()
+  {
+	  var temp=this.top
+	  this.top=this.top.next
+	  temp=null
+      
+  }
+
+  display()
+  {
+    
+      var temp=this.top
+      while(temp!=null)
+      {
+        console.log(temp.data)
+        temp=temp.next
       }
+  }
 
+  mostrarAmigos(){
+    var temporal = this.top
+    
 
-    eliminar(){
-        if(this.primero==null){
-            alert("pila no creada")
-        }
-        else{
-            
-            let firstPointer = this.getTheIndex();
-            let pointerToRemove = this.ultimo.siguiente;
-            firstPointer.siguiente = null;
-            length--;
-        }
-        alert("El amigo ha sido eliminado!")
-    }
+    const selecAmigos = document.getElementById("selectAmigos");
 
-
-    //graficar con graphviz 
-    graficarAmigos(){
-        var codigodot = 'digraph G { label=" Pila de amigos";node [shape=box]; \n '+' a0 [label=< <TABLE border="5"  cellpadding="10" bgcolor="black">';
-        var temporal = this.primero
+    while(temporal!=null){
        
-        var nodos ="";
-        var numnodo= 0;
-        while (temporal != null) {
-            nodos+=  ' <TR><TD border="3" style="radial" bgcolor="white"  gradientangle="60"> ' + temporal.inf + '</TD></TR>  \n'
-            
-            temporal = temporal.siguiente
-            numnodo++;            
-        }
-        codigodot += "//agregando FILAS PARA LA TABLA\n"
-        codigodot += nodos+'</TABLE>>];}'
-        
-        console.log(codigodot)
-        d3.select("#lienzoDeAmigos").graphviz()
-            .width(900)
-            .height(500)
-            .renderDot(codigodot)
+      
+       var  optionAmigos = document.createElement("option");
+       optionAmigos.value = temporal.data
+       optionAmigos.text =  temporal.data;
+       temporal= temporal.next
+       selecAmigos.appendChild(optionAmigos);
+
+    }
+    
+ }
+
+ enviarAmigos(){
+
+  const amigos = document.querySelector('#selectAmigos');
+  console.log(amigos)
+  amigos.addEventListener('change', () => {
+    let valorOption = amigos.value;
+    console.log(valorOption);
+
+    var optionSelect = amigos.options[amigos.selectedIndex];
+
+    console.log("Opción:", optionSelect.text);
+    console.log("Valor:", optionSelect.value);
+
+    /*Mostrando el resultado en el input*/
+  let  inputResult = document.querySelector('#resultAmigos').value=(optionSelect.value);
+    
+  });
+
+
+ }
+
+  graficarpila(){
+    var codigodot = 'digraph G { label=" PILA AMIGOS";node [shape=box]; \n ';
+    codigodot += 'rankdir = LR; \n'
+    var temporal = this.top
+   
+    var nodos ="";
+    
+    while (temporal != null) {
+        nodos+=   temporal.data + '\n'
+        temporal = temporal.next        
+    }
+    codigodot += nodos+'}'
+    
+    console.log(codigodot)
+    d3.select("#lienzoDeAmigos").graphviz()
+        .width(900)
+        .height(500)
+        .renderDot(codigodot)
     }
 
-    mostrarAmigos(){
-      var temporal = this.primero
-      
   
-      const selectAmigos = document.getElementById("selectAmigos");
-  
-      while(temporal!=null){
-         
-        
-        var  optionAmigos = document.createElement("option");
-         optionAmigos.value = temporal.inf
-         optionAmigos.text =  temporal.inf;
-         temporal= temporal.siguiente
-         selectAmigos.appendChild(optionAmigos);
-  
-      }
-      
-   }
-  
-   enviarAmigos(){
-  
-    const amigos = document.querySelector('#selectAmigos');
-    console.log(amigos)
-    amigos.addEventListener('change', () => {
-      let valorOption = amigos.value;
-      console.log(valorOption);
-
-      var optionSelect = amigos.options[amigos.selectedIndex];
-
-      console.log("Opción:", optionSelect.text);
-      console.log("Valor:", optionSelect.value);
-
-      /*Mostrando el resultado en el input*/
-    let  inputResult = document.querySelector('#resultAmigos').value=(optionSelect.value);
-      
-    });
-  
-  
-   }
-  
-
 }
 
-var pilaDeAmigos = new pila();
+var pilaDeAmigos = new Stack();
 
 
 ////////////////////////////////////////////////////////////////////////Empieza lo referente a bloqueados (usuarios - amigos)
@@ -1927,10 +1888,17 @@ function agregarPilaAmigos(){
     var amigo;
   
     amigo=document.getElementById("resultUsuarios").value;
-    pilaDeAmigos.insertar(amigo);
+    pilaDeAmigos.push(amigo);
     alert("El amigo ha sido añadido!!")
+    pilaDeAmigos.graficarpila()
     console.log(pilaDeAmigos);
   }
+function popAmigo(){
+ pilaDeAmigos.pop();
+  alert("El amigo ha sido eliminado")
+  pilaDeAmigos.graficarpila();
+  console.log(pilaDeAmigos);
+}
 
 function borrarAmigosSelect() {
     document.getElementById("selectAmigos").innerHTML= "";
@@ -1946,7 +1914,7 @@ function bloquearUsuario(){
 }
 
   function desbloquearUsuario(){
-    colaDeBloqueados.eliminarUltimo()
+    colaDeBloqueados.eliminarPrimero()
     alert("El usuario ha sido desbloqueado!!")
     colaDeBloqueados.graficarColaBloqueados()
     console.log(colaDeBloqueados);

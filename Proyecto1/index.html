@@ -22,7 +22,7 @@
     <a href="#CargaDePodcast">Carga Podcast</a> 
     
     <a href="#CargaDeMusicaProgramada">Carga Musica Pro.</a>
-    
+    <a href="#InfefazUsuario">Musica Usuario</a>
     <a href="#listaAmigos">Amigos</a>
     <a href="#Manuales">Manuales</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -30,8 +30,9 @@
     </a>
   </div>
   <!--ACA TERMINA LA BARRA DE NAVEGACION-->
+
   <!--ACA EMPIEZA LA BARRA DE NAVEGACION-->
-<!-- The sidebar -->
+<!-- The sidebar
 <div class="sidebar">
   <a href="#Login" class="active">Iniciar Sesion</a>
   <a href="#formRegistro">Registrar Usuario</a>
@@ -44,24 +45,27 @@
   
   <a href="#listaAmigos">Amigos</a>
   <a href="#Manuales">Manuales</a>
-</div>
+</div> -->
 
 <!-- Page content -->
-<div class="content">
-  ..
-</div>
+
   <!--ACA TERMINA LA BARRA DE NAVEGACION-->
 
     
  
   <!--ACA TERMINA LA BARRA DE NAVEGACION-->
   <!--INICIA  REGISTRAR UN USUARIO-->
-
+  
     <div  class="RegistrarUsuario">
-      
+
         <!--CON EL ID DEL FORM MANDO A LLAMAR A LA NAVBAR-->
           <form id="formRegistro">
-            
+            <div class="topnav" id="myTopnav">
+              <center><a href="#Login" class="active">Inicio</a></center>             
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
             <h1>Registrarse</h1>
             <label >Usuario:</label>
             <div>
@@ -85,7 +89,7 @@
             </div>
             <label >Contraseña:</label>
             <div>
-              <center><input id="password"  name="password" type="text" placeholder="contraseña"></center>
+              <center><input id="password"  name="password" type="password" placeholder="contraseña"></center>
               
             </div>
            <div>
@@ -113,7 +117,7 @@
           <label >Password:</label>
           <div>
             
-         <center>   <input id="password2" name="password2" type="text" placeholder="contraseña"></center>
+         <center>   <input id="password2" name="password2" type="password" placeholder="contraseña"></center>
             
           </div>
           <div>
@@ -131,7 +135,12 @@
     <!--INICIA CARGA DE USUARIOS-->
     
     <div id="CargaDeUsuarios" class="CargarUsers">
-      <h1>Empieza el apartado de ADMINISTRADOR</h1>
+      <div class="topnav" id="myTopnav">
+              <center><a href="#Login" class="active">Inicio</a></center>             
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
       <h1 id="Admin">Carga masiva de Usuarios</h1>
 
 
@@ -150,7 +159,12 @@
 
      <!--INICIA CARGA DE ARTISTAS-->
     <div id="CargaDeArtistas" class="CargarArtist">
-
+      <div class="topnav" id="myTopnav">
+        <center><a href="#Login" class="active">Inicio</a></center>             
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
       <h1>Carga masiva de Artistas</h1>
 
 
@@ -169,7 +183,12 @@
 
     <!--INICIA CARGA DE CANCIONES-->
     <div id="CargaDeCanciones" class="CargarSongs">
-
+      <div class="topnav" id="myTopnav">
+        <center><a href="#Login" class="active">Inicio</a></center>             
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
       <h1>Carga masiva de canciones</h1>
 
 
@@ -189,7 +208,12 @@
 
       <!--INICIA CARGA DE PODCAST-->
     <div id="CargaDePodcast" class="CargarPod">
-
+      <div class="topnav" id="myTopnav">
+        <center><a href="#Login" class="active">Inicio</a></center>             
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
       <h1>Carga masiva de podcast</h1>
 
 
@@ -210,7 +234,12 @@
 
      <!--INICIA CARGA DE MUSICA PROGRAMADA-->
     <div id="CargaDeMusicaProgramada" class="MusicaProgramada">
-
+      <div class="topnav" id="myTopnav">
+        <center><a href="#Login" class="active">Inicio</a></center>             
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
       <h1>Carga masiva de musica programada</h1>
 
 
@@ -233,19 +262,25 @@
     <!--  APARTADO DEL USUARIO-->
     <div id="InfefazUsuario" class="InfefazUsuario">
       <br></br>
-    <h1>USUARIO</h1>
-    <h1>MUSICA</h1>
+      <div class="topnav" id="myTopnav">
+        <center><a href="#Login" class="active">Inicio</a></center>             
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    <h1>Musica usuario</h1>
       <form id="formMusicaProgramada">
         <h1>Publicar una cancion</h1>
         <label >Artista:</label>
         <div>
           <center><input id="nombreArtista" name="nombreArtista" type="text" placeholder="Artista">
           </center>
+          
         </div>
         
         <label >Nombre canción:</label>
         <div>
-          <center><input id="nombreCancion" name="nombreCancion" type="text" placeholder="Nombre canción">
+          <center><input id="nombreCancion" name="nombreCancion" type="text" placeholder="Cancion">
           </center>
         </div>
 
@@ -255,6 +290,7 @@
        <!--PARA VER LA MUSICA DE LOS ARTISTAS-->
    
     <div id="LISTASONGS" class="LISTASONGS">
+      
       <h1>Ver musica de los artistas</h1>
       <form >
             <center>
@@ -278,6 +314,7 @@
     <!--termina VER LA MUSICA DE LOS ARTISTAS-->
 
     <br></br>
+    
     <h1>PLAYLIST</h1>
     <div id="divPlaylist">
       <center><button onclick="playlistCanciones.graficarlistaCircular()">Actualizar playlist</button></center>
@@ -290,6 +327,12 @@
 
     <!--PARA MOSTRAR LAS CANCIONES -->
     <div id="ShowSongs" class="ShowSongs">
+      <div class="topnav" id="myTopnav">
+        <center><a href="#Login" class="active">Inicio</a></center>             
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
         <h1>Mostrar todas las Canciones </h1>
         <form id="MostrarCanciones">
             
@@ -310,9 +353,16 @@
     <!--INICIA PARTE DE AMIGOS 
     -->
     <div id="listaAmigos" class="listaAmigos">
-      <h1>AMIGOS</h1>
+      <div class="topnav" id="myTopnav">
+        <center><a href="#Login" class="active">Inicio</a></center>             
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <h1>Amigos</h1>
       
       <div id="listaUsuarios" >
+        <h5>Selecciona un amigo:</h5>
         <form id = "formListaUsuarios">
             <center>
               <select id="selectUsuarios" >
@@ -320,25 +370,25 @@
               </select>
             </center>
         </form>
-
-        <button  type="buttonsAmigos" onclick="borrarUsuariosSelect();usuarios.mostrarUser();usuarios.enviarUser()">
-        Mostrar usuarios</button>
-            
         
+        <button  type="buttonsAmigos" onclick="borrarUsuariosSelect();usuarios.mostrarUser();usuarios.enviarUser()">
+           Mostrar usuarios</button>
+            
       </div>
 
       <div id="listaResultadoUsuarios">
         <center><input type="text" name="resultUsuarios" id="resultUsuarios"></center>
         
-        <div><button type="buttonsAmigos"  onclick="agregarPilaAmigos()">Agregar a un amigo</button></div>
-        <div><button type="buttonsAmigos" onclick="bloquearUsuario();colaDeBloqueados.graficarColaBloqueados()">Bloquear a un usuario</button></div>
-        <div><button  type="buttonsAmigos" onclick="desbloquearUsuario();colaDeBloqueados.graficarColaBloqueados()">Desbloquear a un usuario</button></div>
+        <div><button type="Amigos"  onclick="agregarPilaAmigos()">Agregar a un amigo</button></div>
+        <div><button type="Amigos" onclick="bloquearUsuario();colaDeBloqueados.graficarColaBloqueados()">Bloquear a un usuario</button></div>
+        <div><button  type="Amigos" onclick="desbloquearUsuario();colaDeBloqueados.graficarColaBloqueados()">Desbloquear a un usuario</button></div>
       </div>
 
       <div id="listaAmigos">
         
-
+        
         <form id = "formAmigos">
+          <h5>Selecciona un amigo:</h5>
           <center>
             <select id="selectAmigos">
               
@@ -369,7 +419,7 @@
      <div class="center" id="lienzoDeAmigos" ></div>
       
       <br></br>
-      <h1>BLOQUEADOS</h1>
+      <h1>Usuarios Bloqueados</h1>
       </div>
       <div id="divCola">
         <button type="buttonsAmigos" onclick="colaDeBloqueados.graficarColaBloqueados()">Mostrar cola bloqueos</button>
@@ -383,6 +433,12 @@
     <br></br>
     <!--PARA LOS PODCAST-->
   <div id="podcast" class="Podcast">
+    <div class="topnav" id="myTopnav">
+      <center><a href="#Login" class="active">Inicio</a></center>             
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
     <h1>PODCAST</h1>
     <div id="podcast" >
       <form id="formPodcast">

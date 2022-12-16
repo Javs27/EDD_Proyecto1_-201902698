@@ -380,7 +380,7 @@ class NodoArtista {
   
     //graficar con graphviz 
     graficarArtistas(){
-        var codigodot = "digraph G{\nlabel=\" Artistas - Lista de Listas \";\nnode [shape=box];\n";
+        var codigodot = "digraph G{\nlabel=\" Lista de listas \";\nnode [shape=box];\n";
         var temporal = this.primero
         var conexiones ="";
         var conexiones2="";
@@ -391,35 +391,36 @@ class NodoArtista {
   
             var numnodo2= 0;
             
+            //ACA SIGUE
             
+          //para la lista 2
+          let temporal2=temporal.lista.primero
+
+          conexiones2 += "N" + numnodo + " -> NN" + temporal.dato + "0;\n"
+          while(temporal2!=null){
+              nodos+=  "NN" +temporal.dato+numnodo2+ "[label=\"" +temporal2.dato+ "\" ];\n"
+
+
+              if(temporal2.siguiente!=null){
+                  var auxnum2 = numnodo2+1
+              conexiones2+= "NN" +temporal.dato+numnodo2+ " -> NN" +temporal.dato+auxnum2+ ";\n"
+              }
+
+              
+              temporal2 = temporal2.siguiente
+              numnodo2++; 
+          }
             
-            //para la lista 2
-            let temporal2=temporal.lista.primero
-  
-            conexiones2 += "N" + numnodo + " -> NN" + temporal.dato + "0;\n"
-            while(temporal2!=null){
-                nodos+=  "NN" + temporal.dato +numnodo2 + "[label=\"" + temporal2.dato + "\" ];\n"
-  
-  
-                if(temporal2.siguiente!=null){
-                    var auxnum2 = numnodo2+1
-                conexiones2+= "NN" + temporal.dato +numnodo2 + " -> NN" +temporal.dato + auxnum2 + ";\n"
-                }
-  
-                
-                temporal2 = temporal2.siguiente
-                numnodo2++; 
-            }
-            
-  
-            if(temporal.siguiente != null){
-                var auxnum = numnodo+1
-                conexiones += "N" + numnodo + " -> N" + auxnum + ";\n"
-            }
-  
-  
-            temporal = temporal.siguiente
-            numnodo++;            
+          
+          if(temporal.siguiente != null){
+            var auxnum = numnodo+1
+            conexiones += "N" + numnodo + " -> N" + auxnum + ";\n"
+        }
+
+
+        temporal = temporal.siguiente
+        numnodo++;    
+                     
         }
   
         codigodot += "//agregando nodos\n"
@@ -1836,12 +1837,12 @@ function iniciarSesion(){
     var UsuarioBuscar= usuarios.buscar(usuario)
   
     if(usuario=="EDD" && contrasenia=="123" || UsuarioBuscar.admin == true && usuario== UsuarioBuscar.usuario &&  contrasenia== UsuarioBuscar.contrasenia){
-        alert(" HOLA ADMINISTRADOR")  
+        alert(" Bienvenido Administrador")  
         administrador()
         
     }
     else if(usuario==UsuarioBuscar.usuario && contrasenia==UsuarioBuscar.contrasenia ){
-        alert("HOLA: "+UsuarioBuscar.nombre)
+        alert("Bienvenido: "+UsuarioBuscar.nombre)
         mostrarUsuario();
         
     }
@@ -1861,8 +1862,8 @@ function cerrarSesion(){
 function publicarCancion(){
     var artista = document.getElementById("nombreArtista").value;
     var cancion = document.getElementById("nombreCancion").value;
-    artistas .add(artista)
-    artistas .add2(artista,cancion)
+    artistas.add(artista)
+    artistas.add2(artista,cancion)
     alert("Cancion publicada!!")
 }
 

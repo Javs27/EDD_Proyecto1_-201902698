@@ -479,6 +479,53 @@ class NodoArtista {
   
   
    }
+
+   ascendenteArtistas(){
+    var fin=null
+
+
+    while(fin!=this.primero){
+
+        var primero, segundo
+        primero=this.primero
+        segundo=this.primero
+
+        while(segundo.siguiente!=fin){
+
+            var  tercero=segundo.siguiente
+
+            if(segundo.dato > tercero.dato){
+
+                segundo.siguiente=tercero.siguiente
+                tercero.siguiente=segundo 
+
+                if(segundo!=this.primero){
+
+                    primero.siguiente=tercero
+                }
+                else{
+                    this.primero=tercero
+                }
+
+
+                var aux =segundo
+
+                segundo=tercero
+
+                tercero=aux
+
+            }
+
+            primero=segundo
+            segundo=segundo.siguiente
+
+        }
+    
+
+        fin=segundo
+    }
+}
+
   
   }
   

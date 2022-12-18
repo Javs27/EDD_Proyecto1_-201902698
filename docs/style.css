@@ -320,3 +320,28 @@ h5{
       float: none;
     }
   }
+
+  
+  .Manuales{
+    
+    position: absolute;
+    top: 1425%;
+    left: 36%;
+    font-size: 60px;
+    color: #f1f1f1;
+    
+    
+  }
+  
+  h7 {
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+  }
+  .Manuales a{
+    color: #ffffff;
+  }
+
+  .Manuales a2{
+    color: #ffffff;
+  }
